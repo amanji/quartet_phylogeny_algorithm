@@ -6,6 +6,7 @@ class SearchTree:
 		self.leftlist = []
 		self.middlelist = []
 		self.rightlist = []
+		self.rootid = rootid
 	
 	def getLeftChild(self):
 		return self.left
@@ -13,6 +14,8 @@ class SearchTree:
 		return self.middle
 	def getRightChild(self):
 		return self.right
+	def getNodeValue(self):
+		return self.rootid
 		
 	def insertRight(self,newNode):
         if self.right == None:
@@ -37,3 +40,10 @@ class SearchTree:
             tree = BinaryTree(newNode)
             self.left = tree
             tree.left = self.left
+            
+    def printTree(self):
+        if self != None:
+            print(self.getNodeValue())
+            printTree(self.getLeftChild())
+            printTree(self.getMiddleChild())
+            printTree(self.getRightChild())
