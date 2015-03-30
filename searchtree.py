@@ -18,32 +18,32 @@ class SearchTree:
 		return self.rootid
 		
 	def insertRight(self,newNode):
-        if self.right == None:
-            self.right = SearchTree(newNode)
-        else:
-            tree = SearchTree(newNode)
-            tree.right = self.right
-            self.right = tree
+		if self.right == None:
+			self.right = SearchTree(newNode)
+		else:
+			tree = SearchTree(newNode)
+			tree.right = self.right
+			self.right = tree
             
-    def insertMiddle(self,newNode):
-        if self.middle == None:
-            self.middle = SearchTree(newNode)
-        else:
-            tree = SearchTree(newNode)
-            tree.middle = self.middle
-            self.middle = tree
+	def insertMiddle(self,newNode):
+		if self.middle == None:
+			self.middle = SearchTree(newNode)
+		else:
+			tree = SearchTree(newNode)
+			tree.middle = self.middle
+			self.middle = tree
 
-    def insertLeft(self,newNode):
-        if self.left == None:
-            self.left = SearchTree(newNode)
-        else:
-            tree = SearchTree(newNode)
-            self.left = tree
-            tree.left = self.left
+	def insertLeft(self,newNode):
+		if self.left == None:
+			self.left = SearchTree(newNode)
+		else:
+			tree = SearchTree(newNode)
+			self.left = tree
+			tree.left = self.left
             
-    def printTree(self):
-        if self != None:
-            print(self.getNodeValue())
-            printTree(self.getLeftChild())
-            printTree(self.getMiddleChild())
-            printTree(self.getRightChild())
+	def printTree(self):
+		if self != None:
+			print(self.getNodeValue())
+			printTree(self.getLeftChild())
+			printTree(self.getMiddleChild())
+			printTree(self.getRightChild())
