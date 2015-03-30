@@ -1,20 +1,29 @@
-import searchtree
-from Bio import SeqIO
-from Bio import AlignIO
-from Bio.Alphabet import generic_dna
-from Bio.Seq import Seq
-
-# a = SeqRecord(Seq("AAAACGT", generic_dna), id="Alpha")
-# b = SeqRecord(Seq("AAA-CGT", generic_dna), id="Beta")
-# c = SeqRecord(Seq("AAAAGGT", generic_dna), id="Gamma")
-# align = MultipleSeqAlignment([a, b, c], annotations={"tool": "demo"})
-# print(align)
-
+import math
 
 # Determine which topology of the four nodes is most likely
-def quartet_query(x, a1, a2, a3, msa):
+def quartet_query(x, a1, a2, a3):
 	print "quartet query"
+	score1 = jukes_cantor_distance(x, a1) + jukes_cantor_distance(a2, a3)
+	score2 = jukes_cantor_distance(x, a2) + jukes_cantor_distance(a1, a3)
+	score3 = jukes_cantor_distance(x, a3) + jukes_cantor_distance(a1, a2)
+	scores = [score1, score2, score3]
+	print scores
+	return scores.index(min(scores))
 	
 # Determine which subtree of internal node v we should add x to
 def node_query(T, v, x):
 	print "node query"
+	
+# Compute the jukes-cantor distance between two (aligned) sequences
+def jukes_cantor_distance(x, y):
+	# Compute the number of differences
+    numDiffs = 0
+    for index in range(0, len(x)):
+      if (x[index] != y[index]):
+        numDiffs += 1
+
+    if (numDiffs == 0):
+      distance = 0.0
+    else:
+      distance = -0.75 * math.log(1 - (4.0 / 3.0) * (float(numDiffs) / len(x)), math.e)
+    return distance
