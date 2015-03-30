@@ -11,6 +11,9 @@ align = MultipleSeqAlignment([a, b, c], annotations={"tool": "demo"})
 print(align)
 
 
+# Determine which topology of the four nodes is most likely
 def quartet_query(x, a1, a2, a3, msa):
-	# Determine which subtree x should belong to
+
 	
+# Determine which subtree of internal node v we should add x to
+def node_query(T, v, x):
