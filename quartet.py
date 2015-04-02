@@ -17,13 +17,17 @@ def node_query(T, v, x):
 # Compute the jukes-cantor distance between two (aligned) sequences
 def jukes_cantor_distance(x, y):
 	# Compute the number of differences
-    numDiffs = 0
-    for index in range(0, len(x)):
-      if (x[index] != y[index]):
-        numDiffs += 1
-
-    if (numDiffs == 0):
-      distance = 0.0
-    else:
-      distance = -0.75 * math.log(1 - (4.0 / 3.0) * (float(numDiffs) / len(x)), math.e)
-    return distance
+	numDiffs = 0
+	for index in range(0, len(x)):
+		if (x[index] != y[index]):
+			numDiffs += 1
+    
+	if (numDiffs == 0):
+		distance = 0.0
+	else:
+		# TODO: Check what to do here
+		if (float(numDiffs) / len(x)) > 0.75:
+			distance = float("inf")
+		else:
+			distance = -0.75 * math.log(1 - (4.0 / 3.0) * (float(numDiffs) / len(x)), math.e)
+	return distance

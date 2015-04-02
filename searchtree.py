@@ -1,5 +1,5 @@
 class SearchTree:
-	def __init__(self,rootid):
+	def __init__(self, rootid, subtree_edges):
 		self.left = None
 		self.middle = None
 		self.right = None
@@ -7,6 +7,7 @@ class SearchTree:
 		self.middlelist = []
 		self.rightlist = []
 		self.rootid = rootid
+		self.subtree_edges = subtree_edges
 	
 	def getLeftChild(self):
 		return self.left
@@ -16,10 +17,12 @@ class SearchTree:
 		return self.right
 	def getNodeValue(self):
 		return self.rootid
+	def setRootId(self, rootid):
+		self.rootid = rootid
 		
 	def insertRight(self,newNode):
 		if self.right == None:
-			self.right = SearchTree(newNode)
+			self.right = SearchTree(newNode, [])
 		else:
 			tree = SearchTree(newNode)
 			tree.right = self.right
@@ -27,7 +30,7 @@ class SearchTree:
             
 	def insertMiddle(self,newNode):
 		if self.middle == None:
-			self.middle = SearchTree(newNode)
+			self.middle = SearchTree(newNode, [])
 		else:
 			tree = SearchTree(newNode)
 			tree.middle = self.middle
@@ -35,12 +38,21 @@ class SearchTree:
 
 	def insertLeft(self,newNode):
 		if self.left == None:
-			self.left = SearchTree(newNode)
+			self.left = SearchTree(newNode, [])
 		else:
 			tree = SearchTree(newNode)
 			self.left = tree
 			tree.left = self.left
             
+	def setLeftList(self, leftList):
+		self.leftlist = leftList
+			
+	def setMiddleList(self, middleList):
+		self.middlelist = middleList
+
+	def setRightList(self, rightList):
+		self.rightlist = rightList
+       
 	def printTree(self):
 		if self != None:
 			print(self.getNodeValue())
