@@ -61,11 +61,11 @@ def create_phylogeny():
 			print "idx:", idx
 			print "Y.middle:", Y.middle.rootid
 			if idx == 0:
-				YTi = Y.left
+				YTi = YTi.left
 			elif idx == 1:
-				YTi = Y.middle
+				YTi = YTi.middle
 			else:
-				YTi = Y.right
+				YTi = YTi.right
 		
 		# Split the edge in the phylogeny to add the new taxon
 		newedges = T.insertLeaf(YTi.rootid, i)
