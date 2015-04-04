@@ -7,7 +7,6 @@ def quartet_query(x, a1, a2, a3):
 	score2 = jukes_cantor_distance(x, a2) + jukes_cantor_distance(a1, a3)
 	score3 = jukes_cantor_distance(x, a3) + jukes_cantor_distance(a1, a2)
 	scores = [score1, score2, score3]
-	print scores
 	return scores.index(min(scores))
 	
 # Determine which subtree of internal node v we should add x to

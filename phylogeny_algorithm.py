@@ -19,7 +19,7 @@ a = Seq("AACGT", generic_dna)
 b = Seq("A-CGT", generic_dna)
 c = Seq("AAGGT", generic_dna)
 
-sequences = ["A-CGG", "AACGT", "A-CGT", "AAGGT", "CAGGT"]
+sequences = ["A-CGG", "AACGT", "A-CGT", "AAGGT", "CAGGT", "CAGAT"]
 #sequences = ["A-CGG", "AACGT", "A-CGT", "AAGGT"]
 
 taxa = ["monkey", "human", "fish", "bird"]
@@ -43,23 +43,20 @@ def create_phylogeny():
 	
 	# Insert each taxon into the phylogeny
 	for i in range(3,len(sequences)):
+		print "====================================================="
 		print "i:", i
 		print "Search tree:"
 		Y.printTree()
+		print "Phylogeny:"
+		T.printEdges()
 		YTi = Y
 		
 		# Move down the search tree until we get to a leaf
 		while YTi.left or YTi.middle or YTi.right:
 			print "Move down search tree... YTi:", YTi.rootid
-			print "Current phylogeny:", T.printEdges()
-			print "leftlist[0]:", Y.leftlist[0]
-			print "middlelist[0]:", Y.middlelist[0]
-			print "rightlist[0]:", Y.rightlist[0]
 			# Perform the quartet query
 			othertaxa = [Y.leftlist[0], Y.middlelist[0], Y.rightlist[0]]
 			idx = quartet_query(sequences[i], sequences[othertaxa[0]], sequences[othertaxa[1]], sequences[othertaxa[2]])
-			print "idx:", idx
-			print "Y.middle:", Y.middle.rootid
 			if idx == 0:
 				YTi = YTi.left
 			elif idx == 1:
