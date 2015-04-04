@@ -44,6 +44,8 @@ def create_phylogeny():
 	# Insert each taxon into the phylogeny
 	for i in range(3,len(sequences)):
 		print "i:", i
+		print "Search tree:"
+		Y.printTree()
 		YTi = Y
 		
 		# Move down the search tree until we get to a leaf

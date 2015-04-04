@@ -55,7 +55,16 @@ class SearchTree:
        
 	def printTree(self):
 		if self != None:
-			print(self.getNodeValue())
-			printTree(self.getLeftChild())
-			printTree(self.getMiddleChild())
-			printTree(self.getRightChild())
+			leftc = self.getLeftChild()
+			middlec = self.getMiddleChild()
+			rightc = self.getRightChild()
+			if not (leftc or middlec or rightc):
+				print "leaf:", self.getNodeValue()
+			else:
+				print "internal node:", self.getNodeValue()
+			if (leftc != None):
+				leftc.printTree()
+			if (middlec != None):
+				middlec.printTree()
+			if (rightc != None):
+				rightc.printTree()
