@@ -89,7 +89,7 @@ def create_phylogeny():
 	return T
 	
 tree = create_phylogeny()
-treeprinter = TreePrinter(tree.getEdges(), len(sequences))
+treeprinter = TreePrinter(tree.getEdges(), len(sequences), sequences)
 #print treeprinter.edges
 #print treeprinter.num_taxa
 print treeprinter.leaf_nodes

@@ -19,9 +19,10 @@ class TreePrinter:
 
   newick = '((4,5)9, ((3)8, ((1)7, (0,2)6)))'
   """
-  def __init__(self, edges, num_taxa):
+  def __init__(self, edges, num_taxa, sequences):
     self.edges = edges
     self.num_taxa = num_taxa
+    self.sequences = sequences
     #self.taxa_labels = taxa_labels
     self.leaf_nodes = {}
     self.internal_nodes = []
@@ -52,11 +53,12 @@ class TreePrinter:
          break
     #print first_leaf_node
 
-    # Prepare the newick string:
-    #newick_str = str(tuple(self.leaf_nodes[first_leaf_node])) + str(first_leaf_node)
-    newick_str = '(' + ",".join(map(str, self.leaf_nodes[first_leaf_node])) + ')' + str(first_leaf_node)
 
-    print newick_str
+    newick_str = ''
+
+    # Prepare the newick string:
+    #newick_str = '(' + ",".join(map(str, self.leaf_nodes[first_leaf_node])) + ')' + str(first_leaf_node)
+    newick_str = '(' + ",".join(self.sequences[x] for x in self.leaf_nodes[first_leaf_node]) + ')' + str(first_leaf_node)
 
     # Some of Pythons list functions dont allow lists to be mutated
     #   so this is a workaround
@@ -66,13 +68,15 @@ class TreePrinter:
       for edge in self.internal_nodes:
         if edge[0] == first_leaf_node:
           first_leaf_node = edge[1]
-          newick_str += ',(' + '(' + ",".join(map(str, self.leaf_nodes[first_leaf_node])) + ')' + str(first_leaf_node)
+          #newick_str += ',(' + '(' + ",".join(map(str, self.leaf_nodes[first_leaf_node])) + ')' + str(first_leaf_node)
+          newick_str += ',(' + '(' + ",".join(self.sequences[x] for x in self.leaf_nodes[first_leaf_node]) + ')' + str(first_leaf_node)
           added += 1
           internal_nodes_copy.remove(edge)
           self.internal_nodes = internal_nodes_copy[:]
         elif edge[1] == first_leaf_node:
           first_leaf_node = edge[0]
-          newick_str += ',(' + '(' + ",".join(map(str, self.leaf_nodes[first_leaf_node])) + ')' + str(first_leaf_node)
+          #newick_str += ',(' + '(' + ",".join(map(str, self.leaf_nodes[first_leaf_node])) + ')' + str(first_leaf_node)
+          newick_str += ',(' + '(' + ",".join(self.sequences[x] for x in self.leaf_nodes[first_leaf_node]) + ')' + str(first_leaf_node)
           added += 1
           internal_nodes_copy.remove(edge)
           self.internal_nodes = internal_nodes_copy[:]
@@ -80,6 +84,6 @@ class TreePrinter:
           continue
     
     newick_str += ')' * added
-    #print newick_str    
+    #print newick_str 
     tree = Phylo.read(StringIO(newick_str), "newick")
     Phylo.draw(tree)
