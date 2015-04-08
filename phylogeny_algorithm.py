@@ -1,6 +1,7 @@
 from searchtree import SearchTree
 from quartet import quartet_query
 from unrootedphylogeny import UnrootedPhylogeny
+from treeprinter import TreePrinter
 import random
 from Bio import SeqIO
 from Bio import AlignIO
@@ -19,9 +20,9 @@ a = Seq("AACGT", generic_dna)
 b = Seq("A-CGT", generic_dna)
 c = Seq("AAGGT", generic_dna)
 
-sequences = ["A-CGG", "AACGT", "A-CGT", "AAGGT", "CAGGT", "CAGAT"]
+sequences = ["A-CGG", "AACGT", "A-CGT", "AAGGT", "CAGGT", "CAGAT", "A-CGG", "AACGT", "A-CGT", "AAGGT", "CAGGT", "CAGAT"]
 #sequences = ["A-CGG", "AACGT", "A-CGT", "AAGGT"]
-
+	
 taxa = ["monkey", "human", "fish", "bird"]
 
 def create_phylogeny():
@@ -88,4 +89,8 @@ def create_phylogeny():
 	return T
 	
 tree = create_phylogeny()
-tree.printEdges()
+treeprinter = TreePrinter(tree.getEdges(), len(sequences))
+#print treeprinter.edges
+#print treeprinter.num_taxa
+print treeprinter.leaf_nodes
+print treeprinter.internal_nodes

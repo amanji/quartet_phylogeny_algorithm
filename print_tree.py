@@ -21,6 +21,10 @@ import pylab
 
 # An example output from our tree algorithm:
 
+#If any number appears more than once then it is an internal node
+# We already know that the taxa will be numbered from 0 to len(taxa)-1
+# There fore all internal nodes begin at len(taxa) and go up from there
+
 #(0, 6)
 #(1, 7)
 #(2, 6)
@@ -34,15 +38,15 @@ import pylab
 # If one of the two numbers in any of the tuples appears in any other tuple then it is an internal node
 # Other wise it is a leaf
 
-tree_data = '((4,5)9, ((3)8, ((1)7, (0,2)6)))'
+tree_data = '((L4,L5)9, ((L3)8, ((L1)7, (L0,L2)6)))'
 handle = StringIO(tree_data)
 tree = Phylo.read(handle, "newick")
 
 # Alternatively this can be read in one line as:
 # tree = Phylo.read(StringIO("(A, (B, C), (D, E))"), "newick")
 
-#tree.ladderize()   # Flip branches so deeper clades are displayed at top
-#Phylo.draw(tree)
+tree.ladderize()   # Flip branches so deeper clades are displayed at top
+Phylo.draw(tree)
 
-Phylo.draw_graphviz(tree, node_size=100)
-pylab.show()
+#Phylo.draw_graphviz(tree, node_size=100)
+#pylab.show()

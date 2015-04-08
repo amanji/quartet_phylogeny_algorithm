@@ -22,3 +22,6 @@ class UnrootedPhylogeny:
 	def printEdges(self):
 		for edge in self.edges:
 			print edge
+
+	def getEdges(self):
+		return self.edges
