@@ -2,6 +2,8 @@
 from Bio import Phylo
 from cStringIO import StringIO
 import pylab
+import graphviz as gv
+
 
 class TreePrinter:
   """
@@ -19,13 +21,14 @@ class TreePrinter:
 
   newick = '((4,5)9, ((3)8, ((1)7, (0,2)6)))'
   """
-  def __init__(self, edges, num_taxa, sequences):
+  def __init__(self, edges, num_taxa, sequences, taxa_labels):
     self.edges = edges
     self.num_taxa = num_taxa
     self.sequences = sequences
-    #self.taxa_labels = taxa_labels
+    self.taxa_labels = taxa_labels
     self.leaf_nodes = {}
     self.internal_nodes = []
+    self.bridging_nodes = []
 
     # Prepare dictionary of leaf nodes
     # Prepare list of connected internal nodes
@@ -43,47 +46,68 @@ class TreePrinter:
       else:
         self.internal_nodes.append(edge)
 
-    #Find the first parent with two leaves
-    # NOTE: This approach will fail if theres only one taxa sequence
-    #       the algorithm assumes at least two sequences
-    first_leaf_node = 1
-    for edge, leaves in self.leaf_nodes.iteritems():
-       if len(leaves) > 1:
-         first_leaf_node = edge
-         break
-    #print first_leaf_node
 
+    # It looks like dotgraph may be our best bet given our tree output
+    # Need to format the tree properly
+    dot = gv.Graph(comment='Quartet Phylogeny')
+    for node, leaves in self.leaf_nodes.iteritems():
+      #Create node
+      parent = str(node)
+      dot.node(parent, label="")
 
-    newick_str = ''
+      for leaf in leaves:
+        leaf = self.sequences[leaf] + '_' + str(leaf)
+        dot.node(leaf, shape="plaintext")
+        dot.edge(parent, leaf)
 
-    # Prepare the newick string:
-    #newick_str = '(' + ",".join(map(str, self.leaf_nodes[first_leaf_node])) + ')' + str(first_leaf_node)
-    newick_str = '(' + ",".join(self.sequences[x] for x in self.leaf_nodes[first_leaf_node]) + ')' + str(first_leaf_node)
+    for edge_pair in self.internal_nodes:
+      dot.edge(str(edge_pair[0]), str(edge_pair[1]))
 
-    # Some of Pythons list functions dont allow lists to be mutated
-    #   so this is a workaround
-    internal_nodes_copy = self.internal_nodes[:]
-    added = 0
-    while(len(self.internal_nodes) > 0):
-      for edge in self.internal_nodes:
-        if edge[0] == first_leaf_node:
-          first_leaf_node = edge[1]
-          #newick_str += ',(' + '(' + ",".join(map(str, self.leaf_nodes[first_leaf_node])) + ')' + str(first_leaf_node)
-          newick_str += ',(' + '(' + ",".join(self.sequences[x] for x in self.leaf_nodes[first_leaf_node]) + ')' + str(first_leaf_node)
-          added += 1
-          internal_nodes_copy.remove(edge)
-          self.internal_nodes = internal_nodes_copy[:]
-        elif edge[1] == first_leaf_node:
-          first_leaf_node = edge[0]
-          #newick_str += ',(' + '(' + ",".join(map(str, self.leaf_nodes[first_leaf_node])) + ')' + str(first_leaf_node)
-          newick_str += ',(' + '(' + ",".join(self.sequences[x] for x in self.leaf_nodes[first_leaf_node]) + ')' + str(first_leaf_node)
-          added += 1
-          internal_nodes_copy.remove(edge)
-          self.internal_nodes = internal_nodes_copy[:]
-        else:
-          continue
     
-    newick_str += ')' * added
-    #print newick_str 
-    tree = Phylo.read(StringIO(newick_str), "newick")
-    Phylo.draw(tree)
+    #Apply styling to the graph so it looks like a tree
+    styles = {
+        'graph': {
+            #'overlap' : 'false',
+            #'splines' : 'line',
+            #'nodesep' : '0',
+            #'label': 'A Fancy Graph',
+            'fontsize': '16',
+            #'fontcolor': 'white',
+            #'bgcolor': '#333333',
+            'rankdir': 'BT',
+        },
+        'nodes': {
+            'fontname': 'Helvetica',
+            'shape': 'point',
+            'fontcolor': 'black',
+            #'color': 'white',
+            #'style': 'filled',
+            #'fillcolor': '#006699',
+        },
+        'edges': {
+            'tailclip' : 'false',
+            #'style': 'dashed',
+            #'color': 'white',
+            #'arrowhead': 'open',
+            'fontname': 'Courier',
+            'fontsize': '12',
+            #'fontcolor': 'white',
+        }
+    }
+
+    dot = self.apply_styles(dot,styles)
+    dot.render('round-table.gv', view=True)
+
+  def apply_styles(self, graph, styles):
+    graph.graph_attr.update(
+      ('graph' in styles and styles['graph']) or {}
+    )
+    graph.node_attr.update(
+      ('nodes' in styles and styles['nodes']) or {}
+    )
+    graph.edge_attr.update(
+      ('edges' in styles and styles['edges']) or {}
+    )
+    return graph
+
+
