@@ -1,7 +1,7 @@
 #!usr/bin/env python
 from Bio import Phylo
 from cStringIO import StringIO
-import pylab
+#import pylab
 import graphviz as gv
 
 

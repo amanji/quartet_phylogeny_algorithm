@@ -3,23 +3,47 @@ graph {
 	graph [overlap=false rankdir=BT splines=line]
 	node [fontcolor=black fontname="Droid Sans" shape=point]
 	edge [tailclip=false]
-		8 [label=""]
-		AAGGT_3 [shape=plaintext]
-			8 -- AAGGT_3
-		9 [label=""]
-		CAGGT_4 [shape=plaintext]
-			9 -- CAGGT_4
-		CAGAT_5 [shape=plaintext]
-			9 -- CAGAT_5
-		6 [label=""]
-		"A-CGG_0" [shape=plaintext]
-			6 -- "A-CGG_0"
+		12 [label=""]
 		"A-CGT_2" [shape=plaintext]
-			6 -- "A-CGT_2"
-		7 [label=""]
+			12 -- "A-CGT_2"
+		13 [label=""]
 		AACGT_1 [shape=plaintext]
-			7 -- AACGT_1
-			7 -- 6
-			7 -- 8
-			8 -- 9
+			13 -- AACGT_1
+		14 [label=""]
+		AAGGT_3 [shape=plaintext]
+			14 -- AAGGT_3
+		15 [label=""]
+		CAGGT_4 [shape=plaintext]
+			15 -- CAGGT_4
+		16 [label=""]
+		"A-CGG_6" [shape=plaintext]
+			16 -- "A-CGG_6"
+		17 [label=""]
+		CAGAT_5 [shape=plaintext]
+			17 -- CAGAT_5
+		18 [label=""]
+		"A-CGG_0" [shape=plaintext]
+			18 -- "A-CGG_0"
+		"A-CGT_8" [shape=plaintext]
+			18 -- "A-CGT_8"
+		19 [label=""]
+		AACGT_7 [shape=plaintext]
+			19 -- AACGT_7
+		20 [label=""]
+		AAGGT_9 [shape=plaintext]
+			20 -- AAGGT_9
+		21 [label=""]
+		CAGGT_10 [shape=plaintext]
+			21 -- CAGGT_10
+		CAGAT_11 [shape=plaintext]
+			21 -- CAGAT_11
+			13 -- 12
+			13 -- 14
+			14 -- 15
+			15 -- 17
+			16 -- 12
+			17 -- 19
+			18 -- 16
+			19 -- 20
+			20 -- 21
 }

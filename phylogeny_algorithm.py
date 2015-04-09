@@ -20,9 +20,15 @@ a = Seq("AACGT", generic_dna)
 b = Seq("A-CGT", generic_dna)
 c = Seq("AAGGT", generic_dna)
 
-#sequences = ["A-CGG", "AACGT", "A-CGT", "AAGGT", "CAGGT", "CAGAT", "A-CGG", "AACGT", "A-CGT", "AAGGT", "CAGGT", "CAGAT"]
-sequences = ["A-CGG", "AACGT", "A-CGT", "AAGGT", "CAGGT", "CAGGT", "AAGGT"]
+
+# Test sequences
+#sequences = ["A-CGG", "AACGT", "A-CGT", "AAGGT"]	
+#sequences = ["A-CGG", "AACGT", "A-CGT", "AAGGT", "CAGGT", "CAGAT"]
+sequences = ["A-CGG", "AACGT", "A-CGT", "AAGGT", "CAGGT", "CAGAT", "A-CGG", "AACGT", "A-CGT", "AAGGT", "CAGGT", "CAGAT"]
 taxa = list(range(1,len(sequences)+1))
+
+#sequences = []
+#taxa = []
 
 def create_phylogeny():
 
@@ -43,12 +49,12 @@ def create_phylogeny():
 	
 	# Insert each taxon into the phylogeny
 	for i in range(3,len(sequences)):
-		print "====================================================="
-		print "i:", i
-		print "Search tree:"
-		Y.printTree()
-		print "Phylogeny:"
-		T.printEdges()
+		#print "====================================================="
+		#print "i:", i
+		#print "Search tree:"
+		#Y.printTree()
+		#print "Phylogeny:"
+		#T.printEdges()
 		YTi = Y
 		
 		# Move down the search tree until we get to a leaf
@@ -93,7 +99,14 @@ def create_phylogeny():
 		YTi.setRightList([othertaxa[0]])
 		
 	return T
-	
+
+
+# #Read in MSA
+# align = AlignIO.read('COG840.sim.p', 'phylip')
+# for record in align:
+# 	sequences.append(str(record.seq))
+# 	taxa.append(record.id)
+
 tree = create_phylogeny()
 tree.printEdges()
 treeprinter = TreePrinter(tree.getEdges(), len(sequences), sequences, taxa)
