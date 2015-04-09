@@ -1,0 +1,25 @@
+// Quartet Phylogeny
+graph {
+	graph [overlap=false rankdir=BT splines=line]
+	node [fontcolor=black fontname="Droid Sans" shape=point]
+	edge [tailclip=false]
+		8 [label=""]
+		AAGGT_3 [shape=plaintext]
+			8 -- AAGGT_3
+		9 [label=""]
+		CAGGT_4 [shape=plaintext]
+			9 -- CAGGT_4
+		CAGAT_5 [shape=plaintext]
+			9 -- CAGAT_5
+		6 [label=""]
+		"A-CGG_0" [shape=plaintext]
+			6 -- "A-CGG_0"
+		"A-CGT_2" [shape=plaintext]
+			6 -- "A-CGT_2"
+		7 [label=""]
+		AACGT_1 [shape=plaintext]
+			7 -- AACGT_1
+			7 -- 6
+			7 -- 8
+			8 -- 9
+}

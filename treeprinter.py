@@ -7,19 +7,11 @@ import graphviz as gv
 
 class TreePrinter:
   """
-  Prints out a formatted tree using Phylo from BioPython.
+  Prints out a formatted tree using Graphviz.
 
   Instantiate a the printer by passing in a list of edges (tuple of number pairs) in the final unrooted tree,
   The number of taxa in the final tree,
-  A dictionary of leaf number keys, and taxa id values
-
-  Converts the list of tuples into a valid Newick string.
-
-  Example:
-
-  edges = [(0, 6),(1, 7),(2, 6),(7, 6),(7, 8),(8, 3),(8, 9),(9, 4),(9, 5)]
-
-  newick = '((4,5)9, ((3)8, ((1)7, (0,2)6)))'
+  A list of taxa that is the same length as the list of sequences
   """
   def __init__(self, edges, num_taxa, sequences, taxa_labels):
     self.edges = edges
@@ -67,36 +59,27 @@ class TreePrinter:
     #Apply styling to the graph so it looks like a tree
     styles = {
         'graph': {
-            #'overlap' : 'false',
-            #'splines' : 'line',
+            'overlap' : 'false',
+            'splines' : 'line',
             #'nodesep' : '0',
             #'label': 'A Fancy Graph',
-            'fontsize': '16',
-            #'fontcolor': 'white',
-            #'bgcolor': '#333333',
+            #'fontsize': '16',
             'rankdir': 'BT',
         },
         'nodes': {
-            'fontname': 'Helvetica',
+            'fontname': 'Droid Sans',
             'shape': 'point',
             'fontcolor': 'black',
-            #'color': 'white',
-            #'style': 'filled',
-            #'fillcolor': '#006699',
         },
         'edges': {
             'tailclip' : 'false',
-            #'style': 'dashed',
-            #'color': 'white',
-            #'arrowhead': 'open',
-            'fontname': 'Courier',
-            'fontsize': '12',
-            #'fontcolor': 'white',
+            #'fontname': 'Courier',
+            #'fontsize': '12',
         }
     }
 
     dot = self.apply_styles(dot,styles)
-    dot.render('round-table.gv', view=True)
+    dot.render('test.svg', view=True)
 
   def apply_styles(self, graph, styles):
     graph.graph_attr.update(
