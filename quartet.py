@@ -22,7 +22,9 @@ def jukes_cantor_distance(x, y):
 			numDiffs += 1
     
 	if (numDiffs == 0):
-		distance = 0.0
+		#distance = 0.0
+		# TEMPORARY:
+		distance = -float("inf")
 	else:
 		# TODO: Check what to do here
 		if (float(numDiffs) / len(x)) > 0.75:

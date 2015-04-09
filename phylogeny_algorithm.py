@@ -22,8 +22,7 @@ c = Seq("AAGGT", generic_dna)
 
 #sequences = ["A-CGG", "AACGT", "A-CGT", "AAGGT", "CAGGT", "CAGAT", "A-CGG", "AACGT", "A-CGT", "AAGGT", "CAGGT", "CAGAT"]
 sequences = ["A-CGG", "AACGT", "A-CGT", "AAGGT", "CAGGT", "CAGGT", "AAGGT"]
-	
-taxa = ["monkey", "human", "fish", "bird"]
+taxa = list(range(1,len(sequences)+1))
 
 def create_phylogeny():
 
@@ -97,7 +96,7 @@ def create_phylogeny():
 	
 tree = create_phylogeny()
 tree.printEdges()
-treeprinter = TreePrinter(tree.getEdges(), len(sequences), sequences)
+treeprinter = TreePrinter(tree.getEdges(), len(sequences), sequences, taxa)
 #print treeprinter.edges
 #print treeprinter.num_taxa
 #print treeprinter.leaf_nodes
