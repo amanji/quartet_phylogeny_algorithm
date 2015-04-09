@@ -20,16 +20,16 @@ a = Seq("AACGT", generic_dna)
 b = Seq("A-CGT", generic_dna)
 c = Seq("AAGGT", generic_dna)
 
-sequences = ["A-CGG", "AACGT", "A-CGT", "AAGGT", "CAGGT", "CAGAT", "A-CGG", "AACGT", "A-CGT", "AAGGT", "CAGGT", "CAGAT"]
-#sequences = ["A-CGG", "AACGT", "A-CGT", "AAGGT"]
+#sequences = ["A-CGG", "AACGT", "A-CGT", "AAGGT", "CAGGT", "CAGAT", "A-CGG", "AACGT", "A-CGT", "AAGGT", "CAGGT", "CAGAT"]
+sequences = ["A-CGG", "AACGT", "A-CGT", "AAGGT", "CAGGT", "CAGGT", "AAGGT"]
 	
 taxa = ["monkey", "human", "fish", "bird"]
 
 def create_phylogeny():
 
 	# Initialize phylogeny using first three taxa
-	#random.shuffle(taxa)
-	#print taxa
+	#random.shuffle(sequences)
+	#print sequences
 	first_internal_node = len(sequences)
 	T = UnrootedPhylogeny(first_internal_node, 0, 1, 2)
 	
@@ -55,9 +55,13 @@ def create_phylogeny():
 		# Move down the search tree until we get to a leaf
 		while YTi.left or YTi.middle or YTi.right:
 			print "Move down search tree... YTi:", YTi.rootid
+			YTi.printTree()
 			# Perform the quartet query
-			othertaxa = [Y.leftlist[0], Y.middlelist[0], Y.rightlist[0]]
+			othertaxa = [YTi.leftlist[0], YTi.middlelist[0], YTi.rightlist[0]]
+			print "quartet query: ", othertaxa
 			idx = quartet_query(sequences[i], sequences[othertaxa[0]], sequences[othertaxa[1]], sequences[othertaxa[2]])
+			print "closest: ", othertaxa[idx]
+			print "idx: ", idx
 			if idx == 0:
 				YTi = YTi.left
 			elif idx == 1:
@@ -65,13 +69,16 @@ def create_phylogeny():
 			else:
 				YTi = YTi.right
 		
+		print "Last search tree:"
+		YTi.printTree()
 		# Split the edge in the phylogeny to add the new taxon
+		print "Insert leaf... ", YTi.rootid
 		newedges = T.insertLeaf(YTi.rootid, i)
 		
 		# Add the new edges to the search tree
-		YTi.insertLeft(newedges[0])
-		YTi.insertMiddle(newedges[1])
-		YTi.insertRight(newedges[2])
+		YTi.insertLeft(newedges[2]) # edge to new taxon (leaf)
+		YTi.insertMiddle(newedges[1]) # edge to closest taxon (leaf)
+		YTi.insertRight(newedges[0]) # edge to internal node
 		
 		# Update rootid of YTi
 		YTi.setRootId(T.getLargestNodeNum())
@@ -81,16 +88,17 @@ def create_phylogeny():
 		othertaxa.remove(closesttaxon)
 		# Left list gets just-added taxon
 		YTi.setLeftList([i])
-		# Middle list and right list get the closest taxon plus one of the other ones
-		# from the quartet query (arbitrarily assigned to 0 and 1)
-		YTi.setMiddleList([closesttaxon, othertaxa[0]])
-		YTi.setRightList([closesttaxon, othertaxa[1]])
+		# Middle list gets closest taxon
+		YTi.setMiddleList([closesttaxon])
+		# Right list gets one of the other taxa
+		YTi.setRightList([othertaxa[0]])
 		
 	return T
 	
 tree = create_phylogeny()
+tree.printEdges()
 treeprinter = TreePrinter(tree.getEdges(), len(sequences), sequences)
 #print treeprinter.edges
 #print treeprinter.num_taxa
-print treeprinter.leaf_nodes
-print treeprinter.internal_nodes
+#print treeprinter.leaf_nodes
+#print treeprinter.internal_nodes

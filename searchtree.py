@@ -64,6 +64,7 @@ class SearchTree:
 				print "internal node:", self.getNodeValue()
 				# print lists
 				print "    left list: ", self.leftlist, " middle list: ", self.middlelist, " right list: ", self.rightlist
+				print "    subtree edges: ", self.subtree_edges
 			
 			# print children
 			if (leftc != None):
