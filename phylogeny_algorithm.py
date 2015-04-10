@@ -7,6 +7,7 @@ from Bio import SeqIO
 from Bio import AlignIO
 from Bio.Alphabet import generic_dna
 from Bio.Seq import Seq
+import re
 
 # x = SeqRecord(Seq("A-CGG", generic_dna), id="bla")
 # a = SeqRecord(Seq("AACGT", generic_dna), id="Alpha")
@@ -24,11 +25,11 @@ c = Seq("AAGGT", generic_dna)
 # Test sequences
 #sequences = ["A-CGG", "AACGT", "A-CGT", "AAGGT"]	
 #sequences = ["A-CGG", "AACGT", "A-CGT", "AAGGT", "CAGGT", "CAGAT"]
-sequences = ["A-CGG", "AACGT", "A-CGT", "AAGGT", "CAGGT", "CAGAT", "A-CGG", "AACGT", "A-CGT", "AAGGT", "CAGGT", "CAGAT"]
-taxa = list(range(1,len(sequences)+1))
+#sequences = ["A-CGG", "AACGT", "A-CGT", "AAGGT", "CAGGT", "CAGAT", "A-CGG", "AACGT", "A-CGT", "AAGGT", "CAGGT", "CAGAT"]
+#taxa = list(range(1,len(sequences)+1))
 
-#sequences = []
-#taxa = []
+sequences = []
+taxa = []
 
 def create_phylogeny():
 
@@ -101,14 +102,15 @@ def create_phylogeny():
 	return T
 
 
-# #Read in MSA
-# align = AlignIO.read('COG840.sim.p', 'phylip')
-# for record in align:
-# 	sequences.append(str(record.seq))
-# 	taxa.append(record.id)
+#Read in MSA
+align = AlignIO.read('stx2_superaln_reference.affn', 'fasta')
+for record in align:
+	sequences.append(str(record.seq))
+	taxa_id = re.sub("#REF#", "", str(record.id))
+	taxa.append(taxa_id)
 
 tree = create_phylogeny()
-tree.printEdges()
+#tree.printEdges()
 treeprinter = TreePrinter(tree.getEdges(), len(sequences), sequences, taxa)
 #print treeprinter.edges
 #print treeprinter.num_taxa

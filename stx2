@@ -1,0 +1,461 @@
+// Quartet Phylogeny
+graph {
+	graph [overlap=false rankdir=BT splines=line]
+	node [fontcolor=black fontname="Droid Sans" shape=point]
+	edge [tailclip=false]
+		125 [label=""]
+		"Stx2a-O113-TS17-08-1_4" [shape=plaintext]
+			125 -- "Stx2a-O113-TS17-08-1_4"
+		129 [label=""]
+		"Stx2a-O157-93-111_8" [shape=plaintext]
+			129 -- "Stx2a-O157-93-111_8"
+		131 [label=""]
+		"Stx2a-ONT-EBC210_10" [shape=plaintext]
+			131 -- "Stx2a-ONT-EBC210_10"
+		134 [label=""]
+		"Stx2d-O174-EC173b-4_13" [shape=plaintext]
+			134 -- "Stx2d-O174-EC173b-4_13"
+		136 [label=""]
+		"Stx2a-O157-EDL933_15" [shape=plaintext]
+			136 -- "Stx2a-O157-EDL933_15"
+		137 [label=""]
+		"Stx2a-O113-TS17-08_3" [shape=plaintext]
+			137 -- "Stx2a-O113-TS17-08_3"
+		140 [label=""]
+		"Stx2a-O113-TS17-08-2_19" [shape=plaintext]
+			140 -- "Stx2a-O113-TS17-08-2_19"
+		143 [label=""]
+		"Stx2a-O101-EBC201_16" [shape=plaintext]
+			143 -- "Stx2a-O101-EBC201_16"
+		"Stx2a-ONT-23765_22" [shape=plaintext]
+			143 -- "Stx2a-ONT-23765_22"
+		144 [label=""]
+		"Stx2a-O157-16581_23" [shape=plaintext]
+			144 -- "Stx2a-O157-16581_23"
+		146 [label=""]
+		"Stx2a-O48-94C_21" [shape=plaintext]
+			146 -- "Stx2a-O48-94C_21"
+		147 [label=""]
+		"Stx2d-ONT-EC1871a_26" [shape=plaintext]
+			147 -- "Stx2d-ONT-EC1871a_26"
+		148 [label=""]
+		"Stx2b-Out-HI-N_27" [shape=plaintext]
+			148 -- "Stx2b-Out-HI-N_27"
+		151 [label=""]
+		"Stx2b-O22-3143-97_11" [shape=plaintext]
+			151 -- "Stx2b-O22-3143-97_11"
+		"Stx2b-O118-EH250_30" [shape=plaintext]
+			151 -- "Stx2b-O118-EH250_30"
+		152 [label=""]
+		"Stx2d-O157-7279_29" [shape=plaintext]
+			152 -- "Stx2d-O157-7279_29"
+		"Stx2d-C-freundii-LM76_31" [shape=plaintext]
+			152 -- "Stx2d-C-freundii-LM76_31"
+		153 [label=""]
+		"Stx2c-ONT-pVTEC9_12" [shape=plaintext]
+			153 -- "Stx2c-ONT-pVTEC9_12"
+		157 [label=""]
+		"Stx2b-Out-S-4_1" [shape=plaintext]
+			157 -- "Stx2b-Out-S-4_1"
+		"Stx2b-O8-S-9_36" [shape=plaintext]
+			157 -- "Stx2b-O8-S-9_36"
+		159 [label=""]
+		"Stx2c-OR-TS27-08_5" [shape=plaintext]
+			159 -- "Stx2c-OR-TS27-08_5"
+		160 [label=""]
+		"Stx2b-O40-5293-98_39" [shape=plaintext]
+			160 -- "Stx2b-O40-5293-98_39"
+		161 [label=""]
+		"Stx2d-O103-pVTEC7_40" [shape=plaintext]
+			161 -- "Stx2d-O103-pVTEC7_40"
+		162 [label=""]
+		"Stx2a-O157-EDL933-1_41" [shape=plaintext]
+			162 -- "Stx2a-O157-EDL933-1_41"
+		163 [label=""]
+		"Stx2a-O48-94C-2_14" [shape=plaintext]
+			163 -- "Stx2a-O48-94C-2_14"
+		"Stx2a-O113-TS17-08-4_42" [shape=plaintext]
+			163 -- "Stx2a-O113-TS17-08-4_42"
+		165 [label=""]
+		"Stx2a-O113-CL-3_44" [shape=plaintext]
+			165 -- "Stx2a-O113-CL-3_44"
+		166 [label=""]
+		"Stx2e-O8-FHI-1106-1092_45" [shape=plaintext]
+			166 -- "Stx2e-O8-FHI-1106-1092_45"
+		169 [label=""]
+		"Stx2a-O136-VTB60_48" [shape=plaintext]
+			169 -- "Stx2a-O136-VTB60_48"
+		171 [label=""]
+		"Stx2c-O171-EBC287_50" [shape=plaintext]
+			171 -- "Stx2c-O171-EBC287_50"
+		173 [label=""]
+		"Stx2a-E-cloacae-95MV2_37" [shape=plaintext]
+			173 -- "Stx2a-E-cloacae-95MV2_37"
+		174 [label=""]
+		"Stx2d-O174-EC173b-6_33" [shape=plaintext]
+			174 -- "Stx2d-O174-EC173b-6_33"
+		"Stx2d-O8-C466-01B_53" [shape=plaintext]
+			174 -- "Stx2d-O8-C466-01B_53"
+		175 [label=""]
+		"Stx2e-O22-3615-99-3_54" [shape=plaintext]
+			175 -- "Stx2e-O22-3615-99-3_54"
+		176 [label=""]
+		"Stx2b-O96-S-7_0" [shape=plaintext]
+			176 -- "Stx2b-O96-S-7_0"
+		177 [label=""]
+		"Stx2a-O8-VTB178_52" [shape=plaintext]
+			177 -- "Stx2a-O8-VTB178_52"
+		179 [label=""]
+		"Stx2d-O73-C165-02_20" [shape=plaintext]
+			179 -- "Stx2d-O73-C165-02_20"
+		180 [label=""]
+		"Stx2d-O113-TS03-07_49" [shape=plaintext]
+			180 -- "Stx2d-O113-TS03-07_49"
+		"Stx2d-O174-EC173b-7_59" [shape=plaintext]
+			180 -- "Stx2d-O174-EC173b-7_59"
+		181 [label=""]
+		"Stx2c-O177-06-5121-1_28" [shape=plaintext]
+			181 -- "Stx2c-O177-06-5121-1_28"
+		"Stx2c-O177-06-5121_60" [shape=plaintext]
+			181 -- "Stx2c-O177-06-5121_60"
+		184 [label=""]
+		"Stx2d2-O91-B2F1_7" [shape=plaintext]
+			184 -- "Stx2d2-O91-B2F1_7"
+		"Stx2d-O174-EC173b-1_63" [shape=plaintext]
+			184 -- "Stx2d-O174-EC173b-1_63"
+		185 [label=""]
+		"Stx2a-O157-SF-258-98_62" [shape=plaintext]
+			185 -- "Stx2a-O157-SF-258-98_62"
+		"Stx2a-O26-126814_64" [shape=plaintext]
+			185 -- "Stx2a-O26-126814_64"
+		186 [label=""]
+		"Stx2b-ONT-I7606_18" [shape=plaintext]
+			186 -- "Stx2b-ONT-I7606_18"
+		187 [label=""]
+		"Stx2a-O48-94C-3_25" [shape=plaintext]
+			187 -- "Stx2a-O48-94C-3_25"
+		188 [label=""]
+		"Stx2c-O157-E32511_67" [shape=plaintext]
+			188 -- "Stx2c-O157-E32511_67"
+		189 [label=""]
+		"Stx2d-O174-EC173b-3_68" [shape=plaintext]
+			189 -- "Stx2d-O174-EC173b-3_68"
+		190 [label=""]
+		"Stx2f-O115-F08-101-31_69" [shape=plaintext]
+			190 -- "Stx2f-O115-F08-101-31_69"
+		191 [label=""]
+		"Stx2g-Out-S-8_47" [shape=plaintext]
+			191 -- "Stx2g-Out-S-8_47"
+		192 [label=""]
+		"Stx2b-O93-S-5_71" [shape=plaintext]
+			192 -- "Stx2b-O93-S-5_71"
+		194 [label=""]
+		"Stx2e-ONT-TS03-08_72" [shape=plaintext]
+			194 -- "Stx2e-ONT-TS03-08_72"
+		"Stx2e-ONT-TS29-08_73" [shape=plaintext]
+			194 -- "Stx2e-ONT-TS29-08_73"
+		196 [label=""]
+		"Stx2e-O26-R107_75" [shape=plaintext]
+			196 -- "Stx2e-O26-R107_75"
+		197 [label=""]
+		"Stx2d1-O91-B2F1_46" [shape=plaintext]
+			197 -- "Stx2d1-O91-B2F1_46"
+		"Stx2d-ONT-EBC275_76" [shape=plaintext]
+			197 -- "Stx2d-ONT-EBC275_76"
+		198 [label=""]
+		"Stx2b-O96-S-6_77" [shape=plaintext]
+			198 -- "Stx2b-O96-S-6_77"
+		199 [label=""]
+		"Stx2c-O157-FLY16-2_78" [shape=plaintext]
+			199 -- "Stx2c-O157-FLY16-2_78"
+		200 [label=""]
+		"Stx2c-O177-CB7126_79" [shape=plaintext]
+			200 -- "Stx2c-O177-CB7126_79"
+		201 [label=""]
+		"Stx2d-O174-EC173b-2_80" [shape=plaintext]
+			201 -- "Stx2d-O174-EC173b-2_80"
+		203 [label=""]
+		"Stx2f-O128-T4-97_6" [shape=plaintext]
+			203 -- "Stx2f-O128-T4-97_6"
+		"Stx2f-O128-T4-97-1_82" [shape=plaintext]
+			203 -- "Stx2f-O128-T4-97-1_82"
+		204 [label=""]
+		"Stx2a-O113-TS17-08-3_83" [shape=plaintext]
+			204 -- "Stx2a-O113-TS17-08-3_83"
+		206 [label=""]
+		"Stx2e-O121-NP9621_85" [shape=plaintext]
+			206 -- "Stx2e-O121-NP9621_85"
+		207 [label=""]
+		"Stx2c-O157-469_32" [shape=plaintext]
+			207 -- "Stx2c-O157-469_32"
+		"Stx2c-O157-310-1_86" [shape=plaintext]
+			207 -- "Stx2c-O157-310-1_86"
+		208 [label=""]
+		"Stx2a-O113-TS17-08-5_87" [shape=plaintext]
+			208 -- "Stx2a-O113-TS17-08-5_87"
+		209 [label=""]
+		"Stx2e-ONT-2771_88" [shape=plaintext]
+			209 -- "Stx2e-ONT-2771_88"
+		210 [label=""]
+		"Stx2b-O128-24196-97_89" [shape=plaintext]
+			210 -- "Stx2b-O128-24196-97_89"
+		211 [label=""]
+		"Stx2b-O174-031_65" [shape=plaintext]
+			211 -- "Stx2b-O174-031_65"
+		"Stx2b-O111-PH_90" [shape=plaintext]
+			211 -- "Stx2b-O111-PH_90"
+		212 [label=""]
+		"Stx2e-O22-3615-99-2_91" [shape=plaintext]
+			212 -- "Stx2e-O22-3615-99-2_91"
+		213 [label=""]
+		"Stx2c-OR-TS27-08-1_38" [shape=plaintext]
+			213 -- "Stx2c-OR-TS27-08-1_38"
+		"Stx2c-ONT-EBC289_92" [shape=plaintext]
+			213 -- "Stx2c-ONT-EBC289_92"
+		214 [label=""]
+		"Stx2c-O157-FLY16-1_93" [shape=plaintext]
+			214 -- "Stx2c-O157-FLY16-1_93"
+		215 [label=""]
+		"Stx2c-O157-A75_34" [shape=plaintext]
+			215 -- "Stx2c-O157-A75_34"
+		"Stx2c-O157-310_94" [shape=plaintext]
+			215 -- "Stx2c-O157-310_94"
+		216 [label=""]
+		"Stx2e-OR-TS09-07_95" [shape=plaintext]
+			216 -- "Stx2e-OR-TS09-07_95"
+		217 [label=""]
+		"Stx2a-O111-928-91_57" [shape=plaintext]
+			217 -- "Stx2a-O111-928-91_57"
+		"Stx2a-Acinetobacter_96" [shape=plaintext]
+			217 -- "Stx2a-Acinetobacter_96"
+		218 [label=""]
+		"Stx2e-O101-E-D53_97" [shape=plaintext]
+			218 -- "Stx2e-O101-E-D53_97"
+		219 [label=""]
+		"Stx2a-O157-A397_2" [shape=plaintext]
+			219 -- "Stx2a-O157-A397_2"
+		"Stx2c-O157-G5101_98" [shape=plaintext]
+			219 -- "Stx2c-O157-G5101_98"
+		220 [label=""]
+		"Stx2c-O157-FLY16_99" [shape=plaintext]
+			220 -- "Stx2c-O157-FLY16_99"
+		221 [label=""]
+		"Stx2d-O174-EC173b_100" [shape=plaintext]
+			221 -- "Stx2d-O174-EC173b_100"
+		222 [label=""]
+		"Stx2e-O101-E-D68_51" [shape=plaintext]
+			222 -- "Stx2e-O101-E-D68_51"
+		"Stx2e-O101-E-D43_101" [shape=plaintext]
+			222 -- "Stx2e-O101-E-D43_101"
+		223 [label=""]
+		"Stx2a-O26-FD930_84" [shape=plaintext]
+			223 -- "Stx2a-O26-FD930_84"
+		"Stx2a-O157-EDL933-2_102" [shape=plaintext]
+			223 -- "Stx2a-O157-EDL933-2_102"
+		224 [label=""]
+		"Stx2a-O8-VTB178-1_56" [shape=plaintext]
+			224 -- "Stx2a-O8-VTB178-1_56"
+		"Stx2a-O104-G5506_103" [shape=plaintext]
+			224 -- "Stx2a-O104-G5506_103"
+		225 [label=""]
+		"Stx2e-O139-S1191_104" [shape=plaintext]
+			225 -- "Stx2e-O139-S1191_104"
+		226 [label=""]
+		"Stx2b-O111-S-3_55" [shape=plaintext]
+			226 -- "Stx2b-O111-S-3_55"
+		227 [label=""]
+		"Stx2c-ONT-EBC219_106" [shape=plaintext]
+			227 -- "Stx2c-ONT-EBC219_106"
+		228 [label=""]
+		"Stx2c-O157-FLY16-3_74" [shape=plaintext]
+			228 -- "Stx2c-O157-FLY16-3_74"
+		"Stx2c-O174-031_107" [shape=plaintext]
+			228 -- "Stx2c-O174-031_107"
+		229 [label=""]
+		"Stx2a-O22-EBC217_108" [shape=plaintext]
+			229 -- "Stx2a-O22-EBC217_108"
+		230 [label=""]
+		"Stx2b-O111-S-1_105" [shape=plaintext]
+			230 -- "Stx2b-O111-S-1_105"
+		"Stx2b-O96-S-10_109" [shape=plaintext]
+			230 -- "Stx2b-O96-S-10_109"
+		231 [label=""]
+		"Stx2d-O174-EC173b-5_110" [shape=plaintext]
+			231 -- "Stx2d-O174-EC173b-5_110"
+		232 [label=""]
+		"Stx2g-O2-HI-11_70" [shape=plaintext]
+			232 -- "Stx2g-O2-HI-11_70"
+		233 [label=""]
+		"Stx2c-O157-Y350-1_81" [shape=plaintext]
+			233 -- "Stx2c-O157-Y350-1_81"
+		"Stx2c-O157-C394-03_112" [shape=plaintext]
+			233 -- "Stx2c-O157-C394-03_112"
+		234 [label=""]
+		"Stx2e-O22-3615-99-1_61" [shape=plaintext]
+			234 -- "Stx2e-O22-3615-99-1_61"
+		"Stx2e-O101-E-D42_113" [shape=plaintext]
+			234 -- "Stx2e-O101-E-D42_113"
+		235 [label=""]
+		"Stx2d-O6-NV206_17" [shape=plaintext]
+			235 -- "Stx2d-O6-NV206_17"
+		"Stx2d-O2-EC604a_114" [shape=plaintext]
+			235 -- "Stx2d-O2-EC604a_114"
+		236 [label=""]
+		"Stx2d-O55-5905_9" [shape=plaintext]
+			236 -- "Stx2d-O55-5905_9"
+		"Stx2d-O174-EC1720a_115" [shape=plaintext]
+			236 -- "Stx2d-O174-EC1720a_115"
+		237 [label=""]
+		"Stx2d-O113-TS21-08_58" [shape=plaintext]
+			237 -- "Stx2d-O113-TS21-08_58"
+		"Stx2d-O113-TS21-08-1_116" [shape=plaintext]
+			237 -- "Stx2d-O113-TS21-08-1_116"
+		238 [label=""]
+		"Stx2d-O28-MT71_117" [shape=plaintext]
+			238 -- "Stx2d-O28-MT71_117"
+		239 [label=""]
+		"Stx2a-O48-94C-1_66" [shape=plaintext]
+			239 -- "Stx2a-O48-94C-1_66"
+		"Stx2a-O48-94C-5_118" [shape=plaintext]
+			239 -- "Stx2a-O48-94C-5_118"
+		240 [label=""]
+		"Stx2e-O100-TS01-07_43" [shape=plaintext]
+			240 -- "Stx2e-O100-TS01-07_43"
+		"Stx2e-O22-3615-99_119" [shape=plaintext]
+			240 -- "Stx2e-O22-3615-99_119"
+		241 [label=""]
+		"Stx2g-O2-S86_111" [shape=plaintext]
+			241 -- "Stx2g-O2-S86_111"
+		"Stx2g-O2-7v_120" [shape=plaintext]
+			241 -- "Stx2g-O2-7v_120"
+		242 [label=""]
+		"Stx2a-O178-TS22-08_24" [shape=plaintext]
+			242 -- "Stx2a-O178-TS22-08_24"
+		"Stx2a-O48-94C-4_121" [shape=plaintext]
+			242 -- "Stx2a-O48-94C-4_121"
+		243 [label=""]
+		"Stx2c-O157-020324_35" [shape=plaintext]
+			243 -- "Stx2c-O157-020324_35"
+		"Stx2c-O157-V20_122" [shape=plaintext]
+			243 -- "Stx2c-O157-V20_122"
+			123 -- 132
+			123 -- 192
+			123 -- 128
+			124 -- 136
+			124 -- 204
+			125 -- 135
+			126 -- 227
+			126 -- 154
+			127 -- 139
+			127 -- 168
+			128 -- 161
+			128 -- 189
+			129 -- 178
+			130 -- 171
+			130 -- 201
+			131 -- 205
+			132 -- 198
+			132 -- 160
+			133 -- 127
+			133 -- 153
+			134 -- 138
+			135 -- 137
+			135 -- 140
+			136 -- 169
+			137 -- 143
+			138 -- 236
+			138 -- 141
+			139 -- 124
+			139 -- 186
+			140 -- 163
+			141 -- 235
+			141 -- 179
+			142 -- 165
+			142 -- 145
+			144 -- 219
+			145 -- 146
+			145 -- 242
+			146 -- 187
+			147 -- 150
+			148 -- 157
+			149 -- 134
+			149 -- 188
+			150 -- 184
+			150 -- 152
+			153 -- 207
+			154 -- 167
+			154 -- 174
+			155 -- 156
+			155 -- 215
+			156 -- 200
+			156 -- 243
+			158 -- 131
+			158 -- 173
+			159 -- 213
+			160 -- 151
+			161 -- 126
+			162 -- 125
+			164 -- 190
+			164 -- 212
+			165 -- 208
+			166 -- 130
+			167 -- 195
+			167 -- 197
+			168 -- 164
+			168 -- 191
+			169 -- 129
+			170 -- 155
+			170 -- 231
+			171 -- 133
+			172 -- 182
+			172 -- 175
+			173 -- 177
+			175 -- 193
+			176 -- 226
+			177 -- 224
+			178 -- 144
+			178 -- 217
+			179 -- 237
+			182 -- 240
+			182 -- 234
+			183 -- 158
+			183 -- 185
+			186 -- 210
+			187 -- 239
+			188 -- 220
+			189 -- 221
+			190 -- 203
+			191 -- 232
+			192 -- 148
+			193 -- 218
+			193 -- 194
+			195 -- 159
+			195 -- 228
+			196 -- 206
+			198 -- 176
+			199 -- 202
+			200 -- 181
+			201 -- 238
+			202 -- 170
+			202 -- 233
+			204 -- 142
+			205 -- 162
+			205 -- 223
+			206 -- 172
+			208 -- 229
+			209 -- 196
+			210 -- 211
+			212 -- 216
+			214 -- 199
+			216 -- 225
+			218 -- 222
+			220 -- 214
+			221 -- 147
+			225 -- 209
+			226 -- 230
+			227 -- 166
+			229 -- 183
+			231 -- 180
+			232 -- 241
+			238 -- 149
+}

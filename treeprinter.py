@@ -41,14 +41,14 @@ class TreePrinter:
 
     # It looks like dotgraph may be our best bet given our tree output
     # Need to format the tree properly
-    dot = gv.Graph(comment='Quartet Phylogeny')
+    dot = gv.Graph(comment='Quartet Phylogeny', format='pdf')
     for node, leaves in self.leaf_nodes.iteritems():
       #Create node
       parent = str(node)
       dot.node(parent, label="")
 
       for leaf in leaves:
-        leaf = self.sequences[leaf] + '_' + str(leaf)
+        leaf = self.taxa_labels[leaf] + '_' + str(leaf)
         dot.node(leaf, shape="plaintext")
         dot.edge(parent, leaf)
 
@@ -79,7 +79,7 @@ class TreePrinter:
     }
 
     dot = self.apply_styles(dot,styles)
-    dot.render('test.svg', view=True)
+    dot.render('stx2', view=True)
 
   def apply_styles(self, graph, styles):
     graph.graph_attr.update(
